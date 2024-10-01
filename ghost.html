@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Cute Ghost Animation</title>
+  </head>
+  <style>
+    /* Set up the ghost body */
+.ghost {
+  position: relative;
+  width: 155px;
+  height: 225px;
+  background:white;
+  box-shadow: -17px 0px 0px rgb(229,228,226) inset, 0 0 50px #5939db;
+  border-radius: 100px 100px 0 0;
+  animation: float 2s infinite;
+  margin: 0 auto; 
+}
+.container {
+  position: absolute;       /*to bring the animation to the centre of the page*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ghost__eyes {          /*eyes animation*/
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 70px 0 0;
+  width: 90px;
+  height: 20px;
+}
+
+.ghost__eyes:before,
+.ghost__eyes:after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 25px;
+  background-color: #00034b;
+  border-radius: 50%;
+}
+.ghost__cheeks {
+  position: absolute;
+  top: 100px; 
+  left: 20px; 
+  width: 22px; 
+  height: 15px; 
+  background-color: #FDA4BA;
+  border-top-left-radius:50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px; /* Oval shape for the blush */
+}
+.ghost__cheeks.right {
+  left: auto;
+  right: 20px; /* Right cheek position */
+}
+.ghost__mouth {
+    position: absolute;
+    top:110px;
+    left: 50%;
+    transform:translateX(-50%);
+    width:40px;
+    height:20px;
+    background-color: #000;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+  </style>
+  <body>
+    <div class="container">
+        <div class="ghost">
+            <div class="ghost__eyes"></div>
+              <div class="ghost__cheeks"></div>
+              <div class="ghost__cheeks right"></div>
+              <div class="ghost__mouth"></div>
+            </div>
+        </div>
+    </div>
+           
+  </body>
+</html>
